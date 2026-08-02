@@ -1,0 +1,8 @@
+{
+  "name": "Bb.GAME",
+  "description": "Bb.GAME - The Premier Crypto Casino Clone with provably fair games.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
