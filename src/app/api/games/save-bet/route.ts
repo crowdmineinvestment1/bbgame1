@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
     MockDB.saveBet(betData);
 
     try {
-      await supabase.from('bets').insert({
+      await (supabase as any).from('bets').insert({
         id: betData.id,
         user_id: userId,
         username,
