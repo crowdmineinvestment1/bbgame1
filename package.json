@@ -5,11 +5,11 @@
   "description": "Bb.GAME - The Best Crypto Casino",
   "scripts": {
     "dev": "next dev -p 3000 -H 0.0.0.0",
-    "build": "opennextjs-cloudflare build",
+    "build": "next build",
     "lint": "next lint",
     "start": "next start -p 3000 -H 0.0.0.0",
-    "deploy": "opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare preview"
+    "deploy": "wrangler deploy",
+    "preview": "wrangler deploy --dry-run"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.2",
