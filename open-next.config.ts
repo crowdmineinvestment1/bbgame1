@@ -1,5 +1,6 @@
-import { defineOpenNextConfig } from "@opennextjs/cloudflare";
+import { defineConfig } from "@opennext/manifest";
+import cloudflare from "@opennextjs/cloudflare";
 
-export default defineOpenNextConfig({
-  dangerouslyUseUnsupportedNextVersion: true,
+export default defineConfig({
+  adapter: cloudflare(),
 });
