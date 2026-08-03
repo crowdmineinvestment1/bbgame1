@@ -1,16 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MockDB } from '@/lib/mock-db';
-import { createClient } from '@supabase/supabase-js';
+import { getSupabaseServer } from '@/lib/supabase-server';
 import jwt from 'jsonwebtoken';
 
-const rawKey = process.env.SUPABASE_SERVICE_KEY;
-const supabaseKey = (rawKey && rawKey !== 'your_service_key_here' && rawKey.trim() !== '') 
-  ? rawKey 
-  : process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  supabaseKey
-);
+const supabase = getSupabaseServer();
 
 const JWT_SECRET = process.env.JWT_SECRET || 'bb-game-secret-key-change-in-production';
 
@@ -56,10 +49,8 @@ export async function POST(request: NextRequest) {
       created_at: new Date().toISOString()
     };
 
-    // Save to MockDB
     MockDB.saveBet(betData);
 
-    // Save to Supabase (try/catch if offline/invalid key)
     try {
       await supabase.from('bets').insert({
         id: betData.id,
