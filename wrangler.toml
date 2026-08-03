@@ -1,0 +1,8 @@
+name = "bbgame1"
+main = "./.open-next/worker.js"
+site.bucket = "./.open-next/static"
+compatibility_date = "2026-08-03"
+
+[env.production]
+route = "example.com/*"
+zone_name = "example.com"
