@@ -1,4 +1,4 @@
-import { defineOpenNextConfig } from "@opennextjs/cloudflare/config";
+import { defineOpenNextConfig } from "@opennextjs/cloudflare";
 
 export default defineOpenNextConfig({
   dangerouslyUseUnsupportedNextVersion: true,
